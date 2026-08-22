@@ -1,0 +1,87 @@
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--pink) 0%, var(--pink-mid) 55%, #f9a2c8 100%);
+  color: var(--white);
+}
+
+.cta-band::before {
+  content: '♥';
+  position: absolute;
+  top: -30px;
+  right: 6%;
+  font-size: 14rem;
+  color: rgba(255, 255, 255, 0.13);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.cta-band__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: 56px;
+  padding-top: clamp(60px, 7vw, 96px);
+  padding-bottom: clamp(60px, 7vw, 96px);
+}
+
+.cta-band__text .eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-band__text .section-title {
+  color: var(--white);
+}
+
+.cta-band__text .section-title .accent {
+  color: var(--charcoal);
+}
+
+.cta-band__text p {
+  max-width: 52ch;
+  margin: 20px 0 30px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cta-band__card {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 38px 30px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.cta-band__card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.cta-band__motto {
+  margin: 0;
+  font-size: 1.7rem;
+  color: var(--white);
+}
+
+.cta-band__email {
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding-bottom: 3px;
+}
+
+@media (max-width: 900px) {
+  .cta-band__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

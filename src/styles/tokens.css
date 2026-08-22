@@ -1,0 +1,33 @@
+:root {
+  /* Brand palette — bubblegum pink, gold, cream, charcoal */
+  --pink: #f2569b;
+  --pink-deep: #d63b7f;
+  --pink-mid: #f781b3;
+  --pink-soft: #fbd3e4;
+  --pink-tint: #fdedf4;
+  --gold: #b98c4a;
+  --gold-light: #d8b473;
+  --cream: #fbf3ec;
+  --cream-deep: #f5e6da;
+  --charcoal: #2a2422;
+  --ink: #554944;
+  --white: #ffffff;
+
+  --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-script: 'Dancing Script', 'Brush Script MT', cursive;
+
+  --shadow-sm: 0 4px 14px rgba(42, 36, 34, 0.06);
+  --shadow-md: 0 14px 34px rgba(42, 36, 34, 0.1);
+  --shadow-lg: 0 26px 60px rgba(214, 59, 127, 0.18);
+
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  --container: 1200px;
+  --header-h: 92px;
+  --header-h-sm: 72px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}

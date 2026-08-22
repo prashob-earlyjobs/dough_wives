@@ -1,0 +1,218 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251, 243, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow 0.3s var(--ease), background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.header--scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: var(--cream-deep);
+  box-shadow: 0 8px 24px rgba(42, 36, 34, 0.06);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--header-h);
+  transition: height 0.3s var(--ease);
+}
+
+.header--scrolled .header__inner {
+  height: var(--header-h-sm);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto;
+}
+
+.header__logo img {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  transition: width 0.3s var(--ease), height 0.3s var(--ease);
+}
+
+.header--scrolled .header__logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.header__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.header__logo-text .script {
+  font-size: 1.6rem;
+  color: var(--pink);
+}
+
+.header__logo-sub {
+  margin-top: 2px;
+  color: var(--gold);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.header__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.header__link {
+  position: relative;
+  display: block;
+  padding: 6px 0;
+  color: var(--charcoal);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 0.25s var(--ease);
+}
+
+.header__link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--pink);
+  transform: translateX(-50%);
+  transition: width 0.25s var(--ease);
+}
+
+.header__link:hover,
+.header__link--active {
+  color: var(--pink);
+}
+
+.header__link:hover::after,
+.header__link--active::after {
+  width: 100%;
+}
+
+.header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1.5px solid var(--pink-soft);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.header__burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: var(--pink);
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+}
+
+.header__burger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__cta {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    inset: var(--header-h-sm) 0 0;
+    z-index: 99;
+    padding: 32px 24px 40px;
+    background: var(--cream);
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .mobile-menu ul {
+    margin-bottom: 28px;
+    border-top: 1px solid var(--pink-soft);
+  }
+
+  .mobile-menu__link {
+    display: block;
+    padding: 18px 4px;
+    border-bottom: 1px solid var(--pink-soft);
+    color: var(--charcoal);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu__link--active {
+    color: var(--pink);
+  }
+
+  .mobile-menu__motto {
+    margin-top: 34px;
+    color: var(--pink);
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .header__logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header__logo-text .script {
+    font-size: 1.35rem;
+  }
+}

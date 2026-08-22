@@ -1,0 +1,19 @@
+.notfound {
+  background: var(--pink-tint);
+}
+
+.notfound img {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 26px;
+  border-radius: 50%;
+}
+
+.notfound .lead {
+  margin-top: 16px;
+}
+
+.notfound__actions {
+  justify-content: center;
+  margin-top: 32px;
+}
