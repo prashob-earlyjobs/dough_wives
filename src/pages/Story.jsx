@@ -33,11 +33,11 @@ const timeline = [
 const values = [
   {
     title: 'Everything handmade',
-    body: 'Dough stretched by hand, sauce made from San Marzano tomatoes, nothing pre-made or frozen.',
+    body: 'Dough stretched by hand, nothing pre-made or frozen.',
   },
   {
     title: 'Local where we can',
-    body: 'We buy from independent suppliers and use British flour and cheese wherever possible.',
+    body: 'We support local businesses where we can.',
   },
   {
     title: 'Low waste service',
