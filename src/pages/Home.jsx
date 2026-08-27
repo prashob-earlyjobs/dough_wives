@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import {
+  about,
   brand,
   features,
   eventTypes,
@@ -24,7 +25,7 @@ const socialTiles = [
 export default function Home() {
   usePageMeta(
     null,
-    'Dough Wives serve authentic woodfired pizza at weddings, parties, festivals and corporate events across the Midlands.',
+    'Dough Wives serve authentic woodfired pizza at weddings, parties, celebrations and corporate events across London, Surrey, Sussex and Hampshire.',
   )
 
   const highlights = menu.pizza.slice(0, 3)
@@ -114,14 +115,9 @@ export default function Home() {
             <h2 className="section-title">
               We’re the <span className="accent">Dough Wives</span> ♥
             </h2>
-            <p>
-              Two wives, a love for food and a dream to bring people together over incredible pizza.
-              It started with a Gozney oven in the garden and far too many test doughs.
-            </p>
-            <p>
-              From private parties to festivals, we create unforgettable experiences with our
-              woodfired pizzas and feel-good vibes — pink gazebo and all.
-            </p>
+            {about.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
             <Link to="/our-story" className="btn btn--outline">
               Read our story
               <span className="btn__heart" aria-hidden="true">
@@ -132,7 +128,7 @@ export default function Home() {
 
           <Reveal className="story__collage" delay={140}>
             <div className="photo-frame story__tile story__tile--main">
-              <img src="/brand/wives-back.png" alt="The Dough Wives wearing their branded tees" />
+              <img src="/brand/wives-portrait.png" alt="Illustrated portrait of the Dough Wives" />
             </div>
             <div className="photo-frame story__tile story__tile--box">
               <img src="/brand/pizza-box-open.png" alt="An open Dough Wives pizza box" />

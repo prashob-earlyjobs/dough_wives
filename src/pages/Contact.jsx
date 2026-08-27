@@ -13,6 +13,7 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import Newsletter from '../components/Newsletter'
 import useForm, { isEmail } from '../hooks/useForm'
+import { sendEnquiry } from '../lib/sendEnquiry'
 import usePageMeta from '../hooks/usePageMeta'
 import './Contact.css'
 
@@ -43,10 +44,22 @@ export default function Contact() {
     `Get in touch with the Dough Wives — ${brand.email}. Event enquiries, market pitches and merch orders.`,
   )
 
-  const { values, errors, submitted, handleChange, handleSubmit, reset } = useForm({
-    initialValues,
-    validate,
-  })
+  const { values, errors, submitted, sending, submitError, handleChange, handleSubmit, reset } =
+    useForm({
+      initialValues,
+      validate,
+      onSubmit: (fields) =>
+        sendEnquiry(
+          {
+            name: fields.name,
+            email: fields.email,
+            _replyto: fields.email,
+            subject: fields.subject,
+            message: fields.message,
+          },
+          `Dough Wives website — ${fields.subject}`,
+        ),
+    })
 
   return (
     <>
@@ -55,8 +68,8 @@ export default function Contact() {
         title="Get in"
         accent="Touch"
         intro="Questions about a booking, a market pitch or a merch order? Drop us a message and one of us will reply personally."
-        image="/brand/menu-card.png"
-        imageAlt="Printed Dough Wives menu card"
+        image="/brand/wives-portrait.png"
+        imageAlt="Illustrated portrait of the Dough Wives"
       />
 
       <section className="section section--white">
@@ -189,12 +202,18 @@ export default function Contact() {
                   onChange={handleChange}
                 />
 
-                <button type="submit" className="btn btn--block">
-                  Send message
+                <button type="submit" className="btn btn--block" disabled={sending}>
+                  {sending ? 'Sending…' : 'Send message'}
                   <span className="btn__heart" aria-hidden="true">
                     ♥
                   </span>
                 </button>
+                {submitError ? (
+                  <p className="field__error" role="alert">
+                    {submitError} You can also email us directly at{' '}
+                    <a href={`mailto:${brand.email}`}>{brand.email}</a>.
+                  </p>
+                ) : null}
               </form>
             )}
           </Reveal>

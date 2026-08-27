@@ -1,4 +1,4 @@
-import { brand, features } from '../data/site'
+import { about, brand, features } from '../data/site'
 import { Icon } from '../components/Icons'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
@@ -57,9 +57,9 @@ export default function Story() {
         eyebrow="Our story"
         title="We’re the"
         accent="Dough Wives"
-        intro="Two wives, a love for food and a dream to bring people together over incredible pizza. From private parties to festivals, we create unforgettable experiences with our woodfired pizzas and feel-good vibes."
-        image="/brand/wives-back.png"
-        imageAlt="The Dough Wives wearing their branded tees and pink aprons"
+        intro="Two wives, a love of good food, and an idea that somehow got completely out of hand. Stone-fired pizza, a bit of theatre, and plenty of laughs — wherever the pink setup parks up."
+        image="/brand/wives-portrait.png"
+        imageAlt="Illustrated portrait of the Dough Wives"
       />
 
       <section className="section section--white story-intro">
@@ -69,26 +69,14 @@ export default function Story() {
             <h2 className="section-title">
               It began with a <span className="accent">Friday night</span> tradition
             </h2>
-            <p>
-              We never planned to start a pizza business. It started as something to do on a Friday
-              night — fire up the oven, invite whoever was around, and see who could stretch the
-              roundest base. Spoiler: neither of us could, at first.
-            </p>
-            <p>
-              Three years and a few thousand pizzas later, we know exactly how our dough behaves on a
-              cold morning, how long the oven needs before the first bake, and how good it feels
-              handing someone a pizza they will talk about for months.
-            </p>
-            <p>
-              Today the pink gazebo travels to weddings, festivals and back gardens.{' '}
-              {brand.serviceArea.toLowerCase()} — and we still argue about who makes the better
-              margherita.
-            </p>
+            {about.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
           </Reveal>
 
           <Reveal className="story-intro__media" delay={140}>
             <div className="photo-frame">
-              <img src="/brand/gazebo.png" alt="The Dough Wives pizza stall set up outdoors" />
+              <img src="/brand/gazebo-sharp.png" alt="The Dough Wives pink gazebo and Gozney oven" />
             </div>
             <div className="story-intro__quote">
               <p className="script">{brand.motto}</p>

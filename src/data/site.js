@@ -8,14 +8,22 @@ export const brand = {
   strapline: 'Woodfired Pizza',
   established: '2026',
   motto: 'Good Pizza. Good Vibes. Happy Wives.',
-  email: 'hello@doughwives.co.uk',
-  phone: '07000 000 000',
-  serviceArea: 'Serving the Midlands & surrounding counties',
+  email: 'info@doughwives.co.uk',
+  phone: '07816 969 868',
+  serviceArea: 'Serving London, Surrey, Sussex, Hampshire & surrounding areas',
   instagram: 'https://instagram.com/doughwives',
   facebook: 'https://facebook.com/doughwives',
   tiktok: 'https://tiktok.com/@doughwives',
   handle: '@doughwives',
 }
+
+export const about = [
+  'We never really planned to start a pizza business — Dough Wives began with two wives, a love of good food, and an idea that somehow got completely out of hand.',
+  'What started with firing up the pizza oven and seeing what we could create quickly turned into something we absolutely fell in love with. There’s something pretty special about stretching the dough, adding fresh toppings and watching a pizza cook in front of you — especially when you get to hand it straight to someone and see their reaction.',
+  'Now, our signature pink setup travels to weddings, parties, celebrations, corporate events and private gatherings across London, Surrey and Hampshire, bringing freshly baked, stone-fired pizza and a little bit of Dough Wives personality wherever we go.',
+  'We want Dough Wives to feel like more than just grabbing a pizza. It’s about great food, a bit of theatre, plenty of laughs and creating something people remember long after the last slice has disappeared.',
+  'And yes… despite being married, we still fully intend to argue over who makes the better Margherita.',
+]
 
 export const nav = [
   { label: 'Home', to: '/' },
@@ -141,41 +149,71 @@ export const eventTypes = [
 
 export const packages = [
   {
-    name: 'The Party Slice',
-    guests: 'Up to 40 guests',
-    price: 'from £750',
+    name: 'The Little Wife',
+    tagline: 'Perfect for smaller weddings & intimate celebrations',
+    guests: 'Up to 50 guests',
+    price: 'from £795',
+    perfectFor: 'Intimate weddings, registry celebrations & evening food',
     includes: [
-      '2 hours of continuous service',
-      'Choice of 3 pizzas from our menu',
-      'Pink gazebo, oven and full setup',
-      'Two Dough Wives on the paddles',
+      'Freshly fired pizzas',
+      'Choice of 3 pizza flavours',
+      'Vegetarian option included',
+      'Cooked fresh in a Gozney Dome Gen 2',
+      'Dough Wives pink event setup',
+      'Napkins & serving essentials',
+      'Dough Wives team for up to 2 hours',
     ],
   },
   {
-    name: 'The Wedding Wives',
-    guests: '40 – 120 guests',
-    price: 'from £1,450',
+    name: 'The Big Wife',
+    tagline: 'Our signature wedding package',
+    guests: 'Up to 80 guests',
+    price: 'from £1,195',
+    perfectFor: 'Wedding receptions & evening catering',
     includes: [
-      '3 hours of continuous service',
-      'Choice of 5 pizzas plus garlic bread',
-      'Styled stall, signage and string lights',
-      'Menu tasting for two before the day',
-      'Late-night pizza box send-off',
+      'Choice of 4 pizza flavours',
+      'Vegetarian option included',
+      'Gozney-fired throughout your service',
+      'Full Dough Wives pink event setup',
+      'Two simple side dishes',
+      'Garlic breads for the tables',
+      'Napkins & serving essentials',
+      'Dough Wives team for up to 3 hours',
     ],
     featured: true,
   },
   {
-    name: 'The Full Dough',
-    guests: '120+ guests',
-    price: "let's talk",
+    name: 'The Full Wife',
+    tagline: 'Go on then. Let’s make a thing of it.',
+    guests: 'Up to 100 guests',
+    price: 'from £1,595',
+    perfectFor: 'Bigger wedding parties who want the full experience',
     includes: [
-      'Multi-oven service for big crowds',
-      'Bespoke menu built with you',
-      'Dessert pizza and drinks station',
-      'Branded boxes for your guests',
+      'Choice of 5 pizza flavours',
+      'One personalised Bride & Groom pizza',
+      'Vegetarian option included',
+      'Garlic breads and two sides',
+      'Gozney-fired pizza throughout service',
+      'Full styled Dough Wives setup',
+      'Personalised wedding menu board',
+      'Napkins & serving essentials',
+      'Dough Wives team for up to 3 hours',
+      'Pizza boxes for any remaining pizza',
     ],
   },
 ]
+
+export const packageExtras = {
+  extraGuests: 'Need more pizza? Additional guests from £12.50 per person.',
+  extras: [
+    'Desserts',
+    'Children’s pizzas',
+    'Late-night pizza',
+    'Additional service time',
+    'Personalised pizza boxes',
+  ],
+  note: 'Travel charges may apply. Final pricing is confirmed on enquiry. Please tell us about allergies before you book.',
+}
 
 export const bookingSteps = [
   {
@@ -322,7 +360,7 @@ export const faqs = [
   },
   {
     q: 'How far do you travel?',
-    a: `${brand.serviceArea}. The first 30 miles are included; beyond that we add a small mileage charge, quoted upfront.`,
+    a: `${brand.serviceArea}. Travel charges may apply depending on the venue — we’ll always quote these upfront.`,
   },
   {
     q: 'How do we secure our date?',

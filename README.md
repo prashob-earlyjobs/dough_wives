@@ -28,6 +28,7 @@ src/styles/tokens.css    Colour palette, fonts, radii, shadows
 src/styles/global.css    Reset, typography, buttons, sections, forms, scroll-reveal
 src/components/          Header, Footer, PageHero, CtaBand, Newsletter, Marquee, Field, Icons
 src/hooks/               usePageMeta (titles/descriptions), useForm (validation)
+src/lib/sendEnquiry.js   Forwards booking and contact forms to info@doughwives.co.uk
 src/pages/               One component + stylesheet per route
 ```
 
@@ -44,20 +45,19 @@ component.
 
 These are stand-ins so the site renders as a finished product. Swap them for real details:
 
-- **Contact details** in `src/data/site.js`: `email`, `phone`, `serviceArea` and the social URLs.
-- **Prices and packages** — menu prices and the three catering packages are realistic examples.
+- **Social URLs** in `src/data/site.js` (`instagram`, `facebook`, `tiktok`).
 - **Event dates** in `upcomingEvents`.
 - **Testimonials** in `testimonials`.
-- **Photography**: images in `public/brand/` are crops taken from the supplied brand board, so they
-  are low resolution. Replace them with full-size photos using the same filenames and everything
-  keeps working.
+- **Photography**: swap remaining low-resolution brand-board crops in `public/brand/` for full-size
+  photos using the same filenames.
 
 ## Forms
 
-The booking and contact forms validate on submit (required fields, email format, past dates) and
-show an inline success state, but nothing is sent anywhere — there is no backend. To make them
-live, add a handler to the `onSubmit` option in `useForm` and post to your provider of choice
-(Formspree, Netlify Forms, Resend, or your own API).
+The booking and contact forms send to **info@doughwives.co.uk** via [FormSubmit](https://formsubmit.co).
+
+The first live enquiry triggers a one-time confirmation email to that inbox. Click the confirm link
+in that email and every later submission arrives automatically. Until that link is clicked, new
+enquiries are held.
 
 ## Accessibility and performance notes
 

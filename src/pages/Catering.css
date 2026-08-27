@@ -79,12 +79,17 @@
 }
 
 .package__guests {
-  margin: 4px 0 14px;
+  margin: 4px 0 8px;
   color: var(--gold);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.package__tagline {
+  margin: 0 0 14px;
+  font-size: 0.92rem;
 }
 
 .package__price {
@@ -99,7 +104,62 @@
 .package ul {
   display: grid;
   gap: 12px;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
+}
+
+.package__perfect {
+  margin: 0 0 22px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.package-extras {
+  margin-top: 48px;
+  padding: 32px 36px;
+  border-radius: var(--radius-md);
+  background: var(--white);
+  text-align: center;
+}
+
+.package-extras__lead {
+  margin: 0 0 18px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.package-extras__label {
+  margin: 0 0 12px;
+  color: var(--pink-deep);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.package-extras ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.package-extras li {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--pink-tint);
+  color: var(--pink-deep);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.package-extras__note {
+  margin: 0;
+  color: #8a7b74;
+  font-size: 0.85rem;
 }
 
 /* Steps */

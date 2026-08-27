@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { bookingSteps, eventTypes, faqs, packages } from '../data/site'
+import { bookingSteps, eventTypes, faqs, packages, packageExtras } from '../data/site'
 import { CheckIcon, Icon, PlusIcon } from '../components/Icons'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
@@ -39,7 +39,7 @@ function Faq({ item, isOpen, onToggle, id }) {
 export default function Catering() {
   usePageMeta(
     'Catering',
-    'Woodfired pizza catering for weddings, parties, festivals and corporate events. Packages from £750.',
+    'Woodfired pizza catering for weddings, parties, festivals and corporate events. Packages from £795.',
   )
 
   const [openFaq, setOpenFaq] = useState(0)
@@ -47,12 +47,12 @@ export default function Catering() {
   return (
     <>
       <PageHero
-        eyebrow="Making your event extra special"
+        eyebrow="Your big day. Our big oven."
         title="Pizza"
         accent="Catering"
-        intro="Weddings, birthdays, corporate events or just because — we bring the pizza, you bring the guests. Let’s make it unforgettable."
-        image="/brand/gazebo.png"
-        imageAlt="The Dough Wives pizza stall ready for service"
+        intro="Wood-fired pizza, made with love. Served with style. From intimate celebrations to full-on party vibes, we’ve got the perfect pizza package for your perfect day."
+        image="/brand/gazebo-sharp.png"
+        imageAlt="The Dough Wives pink gazebo and Gozney woodfired oven"
       />
 
       <section className="section section--white">
@@ -89,13 +89,13 @@ export default function Catering() {
       <section className="section section--tint">
         <div className="container">
           <div className="section-head section-head--center">
-            <p className="eyebrow">Packages</p>
+            <p className="eyebrow">Wedding packages</p>
             <h2 className="section-title">
               Pick your <span className="accent">pizza party</span>
             </h2>
             <p>
-              Every package includes the pink gazebo, the woodfired oven, all serveware and two Dough
-              Wives running service. Prices are a guide — we’ll always quote for your day.
+              Every package includes the Dough Wives pink event setup, the Gozney oven and the team.
+              Prices are a guide — we’ll always quote for your day.
             </p>
           </div>
 
@@ -106,9 +106,10 @@ export default function Catering() {
                 key={pack.name}
                 delay={index * 90}
               >
-                {pack.featured ? <span className="package__flag">Most booked</span> : null}
+                {pack.featured ? <span className="package__flag">Signature package</span> : null}
                 <h3 className="package__name script">{pack.name}</h3>
                 <p className="package__guests">{pack.guests}</p>
+                <p className="package__tagline">{pack.tagline}</p>
                 <p className="package__price">{pack.price}</p>
                 <ul>
                   {pack.includes.map((line) => (
@@ -118,6 +119,9 @@ export default function Catering() {
                     </li>
                   ))}
                 </ul>
+                {pack.perfectFor ? (
+                  <p className="package__perfect">Perfect for {pack.perfectFor.toLowerCase()}</p>
+                ) : null}
                 <Link
                   to="/book"
                   className={`btn btn--block${pack.featured ? '' : ' btn--outline'}`}
@@ -129,6 +133,17 @@ export default function Catering() {
                 </Link>
               </Reveal>
             ))}
+          </div>
+
+          <div className="package-extras">
+            <p className="package-extras__lead">{packageExtras.extraGuests}</p>
+            <p className="package-extras__label">Optional extras</p>
+            <ul>
+              {packageExtras.extras.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p className="package-extras__note">{packageExtras.note}</p>
           </div>
         </div>
       </section>

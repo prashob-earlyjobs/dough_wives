@@ -4,6 +4,7 @@ import Field from '../components/Field'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import useForm, { isEmail } from '../hooks/useForm'
+import { sendEnquiry } from '../lib/sendEnquiry'
 import usePageMeta from '../hooks/usePageMeta'
 import './Book.css'
 
@@ -16,7 +17,13 @@ const EVENT_TYPES = [
   'Something else',
 ]
 
-const GUEST_RANGES = ['Select guest numbers', 'Up to 40', '40 – 80', '80 – 120', '120+']
+const GUEST_RANGES = [
+  'Select guest numbers',
+  'Up to 50',
+  'Up to 80',
+  'Up to 100',
+  '100+',
+]
 
 const initialValues = {
   name: '',
@@ -51,10 +58,26 @@ export default function Book() {
     'Check your date and get a woodfired pizza catering quote from the Dough Wives within 48 hours.',
   )
 
-  const { values, errors, submitted, handleChange, handleSubmit, reset } = useForm({
-    initialValues,
-    validate,
-  })
+  const { values, errors, submitted, sending, submitError, handleChange, handleSubmit, reset } =
+    useForm({
+      initialValues,
+      validate,
+      onSubmit: (fields) =>
+        sendEnquiry(
+          {
+            name: fields.name,
+            email: fields.email,
+            _replyto: fields.email,
+            phone: fields.phone || 'Not given',
+            eventType: fields.eventType,
+            eventDate: fields.eventDate,
+            guests: fields.guests,
+            location: fields.location,
+            message: fields.message || 'No extra notes',
+          },
+          `Dough Wives booking enquiry — ${fields.eventType} on ${fields.eventDate}`,
+        ),
+    })
 
   return (
     <>
@@ -170,17 +193,23 @@ export default function Book() {
                   />
                 </div>
 
-                <button type="submit" className="btn">
-                  Send my enquiry
+                <button type="submit" className="btn" disabled={sending}>
+                  {sending ? 'Sending…' : 'Send my enquiry'}
                   <span className="btn__heart" aria-hidden="true">
                     ♥
                   </span>
                 </button>
-
-                <p className="form-note">
-                  Fields marked * are required. We only use your details to answer your enquiry —
-                  never for anything else.
-                </p>
+                {submitError ? (
+                  <p className="field__error" role="alert">
+                    {submitError} You can also email us directly at{' '}
+                    <a href={`mailto:${brand.email}`}>{brand.email}</a>.
+                  </p>
+                ) : (
+                  <p className="form-note">
+                    Fields marked * are required. Your enquiry is sent to {brand.email}. We only use
+                    your details to answer you — never for anything else.
+                  </p>
+                )}
               </form>
             )}
           </Reveal>

@@ -1,16 +1,17 @@
 import { useState } from 'react'
 
 /**
- * Minimal controlled-form helper: values, per-field errors and a submit
+ * Controlled-form helper: values, per-field errors and an async submit
  * guard. `validate` receives all values and returns an errors object.
- *
- * There is no backend wired up, so a successful submit resolves locally.
- * Swap `onSubmit` for a real API/email call when one is available.
+ * `onSubmit` should return a promise (e.g. sendEnquiry) so the form can
+ * show sending / error states.
  */
 export default function useForm({ initialValues, validate, onSubmit }) {
   const [values, setValues] = useState(initialValues)
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -21,9 +22,10 @@ export default function useForm({ initialValues, validate, onSubmit }) {
       delete next[name]
       return next
     })
+    if (submitError) setSubmitError('')
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const nextErrors = validate(values)
 
@@ -35,17 +37,46 @@ export default function useForm({ initialValues, validate, onSubmit }) {
     }
 
     setErrors({})
-    setSubmitted(true)
-    onSubmit?.(values)
+    setSubmitError('')
+
+    if (!onSubmit) {
+      setSubmitted(true)
+      return
+    }
+
+    setSending(true)
+    try {
+      await onSubmit(values)
+      setSubmitted(true)
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Something went wrong sending your message. Please email us instead.',
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   const reset = () => {
     setValues(initialValues)
     setErrors({})
     setSubmitted(false)
+    setSending(false)
+    setSubmitError('')
   }
 
-  return { values, errors, submitted, handleChange, handleSubmit, reset }
+  return {
+    values,
+    errors,
+    submitted,
+    sending,
+    submitError,
+    handleChange,
+    handleSubmit,
+    reset,
+  }
 }
 
 export const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim())
