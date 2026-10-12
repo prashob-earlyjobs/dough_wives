@@ -86,8 +86,8 @@ export default function Book() {
         title="Book"
         accent="Us"
         intro="Fill in the form and we’ll come back within 48 hours with availability, a quote and a few menu ideas. No obligation, no hard sell."
-        image="/brand/pizza-box-open.png"
-        imageAlt="An open Dough Wives pizza box with a margherita inside"
+        image="/brand/book-pizza.jpg"
+        imageAlt="Freshly baked woodfired pizza in a pink Dough Wives box"
       />
 
       <section className="section section--white book">

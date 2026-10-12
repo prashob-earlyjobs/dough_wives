@@ -21,7 +21,6 @@ const SUBJECTS = [
   'What’s it about?',
   'Event enquiry',
   'Market or festival pitch',
-  'Merch order',
   'Press or collaboration',
   'Something else',
 ]
@@ -41,7 +40,7 @@ function validate(values) {
 export default function Contact() {
   usePageMeta(
     'Contact',
-    `Get in touch with the Dough Wives — ${brand.email}. Event enquiries, market pitches and merch orders.`,
+    `Get in touch with the Dough Wives — ${brand.email}. Event enquiries and market pitches.`,
   )
 
   const { values, errors, submitted, sending, submitError, handleChange, handleSubmit, reset } =
@@ -67,8 +66,8 @@ export default function Contact() {
         eyebrow="Say hello"
         title="Get in"
         accent="Touch"
-        intro="Questions about a booking, a market pitch or a merch order? Drop us a message and one of us will reply personally."
-        image="/brand/wives-portrait.png"
+        intro="Questions about a booking or a market pitch? Drop us a message and one of us will reply personally."
+        image="/brand/wives-portrait.jpg"
         imageAlt="Illustrated portrait of the Dough Wives"
       />
 

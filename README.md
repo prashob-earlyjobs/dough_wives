@@ -4,8 +4,7 @@ A React website for Dough Wives, built from the brand board: bubblegum pink, gol
 charcoal, with the circular logo, the `Good Pizza. Good Vibes. Happy Wives.` motto and the pink
 gazebo photography.
 
-Nine routes: Home, Our Story, Menu, Events, Gallery, Catering, Merch, Contact and Book Us, plus a
-404 page.
+Six routes: Home, Our Story, Menu, Catering, Contact and Book Us, plus a 404 page.
 
 ## Getting started
 
@@ -23,7 +22,7 @@ npm run preview  # serve the production build locally
 ```
 public/brand/            Brand imagery used by the site (logo, gazebo, merch, packaging)
 brand-source/            Original brand board and homepage mockup (not shipped in the build)
-src/data/site.js         All site copy: brand details, menu, prices, packages, events, FAQs
+src/data/site.js         All site copy: brand details, menu, prices, packages, FAQs
 src/styles/tokens.css    Colour palette, fonts, radii, shadows
 src/styles/global.css    Reset, typography, buttons, sections, forms, scroll-reveal
 src/components/          Header, Footer, PageHero, CtaBand, Newsletter, Marquee, Field, Icons
@@ -35,8 +34,8 @@ src/pages/               One component + stylesheet per route
 ### Editing content
 
 Almost everything readable on the site comes from `src/data/site.js` — menu items and prices,
-catering packages, upcoming event dates, testimonials, merch, FAQs and the contact details used in
-the header, footer and forms. Change it there once and every page updates.
+catering packages, testimonials, FAQs and the contact details used in the header, footer and
+forms. Change it there once and every page updates.
 
 Page-specific prose (the Our Story timeline, for example) lives at the top of that page's
 component.
@@ -46,7 +45,6 @@ component.
 These are stand-ins so the site renders as a finished product. Swap them for real details:
 
 - **Social URLs** in `src/data/site.js` (`instagram`, `facebook`, `tiktok`).
-- **Event dates** in `upcomingEvents`.
 - **Testimonials** in `testimonials`.
 - **Photography**: swap remaining low-resolution brand-board crops in `public/brand/` for full-size
   photos using the same filenames.

@@ -58,7 +58,7 @@ export default function Story() {
         title="We’re the"
         accent="Dough Wives"
         intro="Two wives, a love of good food, and an idea that somehow got completely out of hand. Stone-fired pizza, a bit of theatre, and plenty of laughs — wherever the pink setup parks up."
-        image="/brand/wives-portrait.png"
+        image="/brand/wives-portrait.jpg"
         imageAlt="Illustrated portrait of the Dough Wives"
       />
 
@@ -76,7 +76,7 @@ export default function Story() {
 
           <Reveal className="story-intro__media" delay={140}>
             <div className="photo-frame">
-              <img src="/brand/gazebo-sharp.png" alt="The Dough Wives pink gazebo and Gozney oven" />
+              <img src="/brand/gazebo-sharp.jpg" alt="The Dough Wives pink gazebo and Gozney oven" />
             </div>
             <div className="story-intro__quote">
               <p className="script">{brand.motto}</p>

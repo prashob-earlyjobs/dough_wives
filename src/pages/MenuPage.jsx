@@ -52,8 +52,8 @@ export default function MenuPage() {
         title="The"
         accent="Menu"
         intro="Slow-fermented 48-hour dough, San Marzano tomatoes and fior di latte, blistered in 90 seconds at 450°C. Simple done properly."
-        image="/brand/pizza-pink.png"
-        imageAlt="A freshly baked margherita pizza"
+        image="/brand/book-pizza.jpg"
+        imageAlt="A freshly baked woodfired margherita pizza"
       />
 
       <section className="section section--white menu-section">

@@ -29,10 +29,7 @@ export const nav = [
   { label: 'Home', to: '/' },
   { label: 'Our Story', to: '/our-story' },
   { label: 'Menu', to: '/menu' },
-  { label: 'Events', to: '/events' },
-  { label: 'Gallery', to: '/gallery' },
   { label: 'Catering', to: '/catering' },
-  { label: 'Merch', to: '/merch' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -238,45 +235,6 @@ export const bookingSteps = [
   },
 ]
 
-export const upcomingEvents = [
-  {
-    date: '2026-09-05',
-    day: '05',
-    month: 'Sep',
-    name: 'Riverside Street Food Market',
-    location: 'Riverside Park, Nottingham',
-    time: '11:00 – 20:00',
-    status: 'Open to all',
-  },
-  {
-    date: '2026-09-19',
-    day: '19',
-    month: 'Sep',
-    name: 'Harvest Food & Craft Festival',
-    location: 'Bakewell Showground, Derbyshire',
-    time: '10:00 – 18:00',
-    status: 'Open to all',
-  },
-  {
-    date: '2026-10-03',
-    day: '03',
-    month: 'Oct',
-    name: 'Pink Party Fundraiser',
-    location: 'The Old Mill, Loughborough',
-    time: '17:00 – 23:00',
-    status: 'Ticketed',
-  },
-  {
-    date: '2026-10-25',
-    day: '25',
-    month: 'Oct',
-    name: 'Autumn Twilight Market',
-    location: 'Market Square, Leicester',
-    time: '12:00 – 21:00',
-    status: 'Open to all',
-  },
-]
-
 export const testimonials = [
   {
     quote:
@@ -295,53 +253,6 @@ export const testimonials = [
       'Best pizza on the market circuit, hands down. That 48-hour dough makes all the difference.',
     author: 'Tom H.',
     detail: 'Riverside Market regular',
-  },
-]
-
-export const gallery = [
-  { src: '/brand/gazebo.png', alt: 'The pink Dough Wives gazebo set up with the woodfired oven', span: 'wide' },
-  { src: '/brand/pizza-pink.png', alt: 'Freshly baked margherita pizza on a pink cloth' },
-  { src: '/brand/wives-back.png', alt: 'The Dough Wives in branded t-shirts and aprons' },
-  { src: '/brand/pizza-boxes.png', alt: 'Branded pink Dough Wives pizza boxes' },
-  { src: '/brand/neon-sign.png', alt: 'Neon sign reading good pizza, good vibes, happy wives' },
-  { src: '/brand/uniforms.png', alt: 'Dough Wives team uniforms — tees, aprons and caps', span: 'wide' },
-  { src: '/brand/hero-gazebo.png', alt: 'Evening service under string lights at the pizza stall' },
-  { src: '/brand/pizza-box-open.png', alt: 'An open pizza box with a margherita inside' },
-  { src: '/brand/takeaway-bag.png', alt: 'Pink branded takeaway bag' },
-  { src: '/brand/pink-cups.png', alt: 'Branded pink drinks cups' },
-  { src: '/brand/menu-card.png', alt: 'Printed Dough Wives menu card' },
-  { src: '/brand/merch-row.png', alt: 'Branded cap, apron and embroidered tee', span: 'wide' },
-  { src: '/brand/merch-embroidery.png', alt: 'Close-up of the embroidered Dough Wives logo' },
-]
-
-export const merch = [
-  {
-    name: 'Dough Wives Tee',
-    price: '£24',
-    image: '/brand/uniforms.png',
-    description: 'Soft cotton tee with the circular logo printed large across the back.',
-    options: 'XS – XXL · White or cream',
-  },
-  {
-    name: 'Signature Apron',
-    price: '£28',
-    image: '/brand/merch-apron.png',
-    description: 'Bubblegum pink apron with front pocket and embroidered logo.',
-    options: 'One size · Adjustable ties',
-  },
-  {
-    name: 'Logo Cap',
-    price: '£18',
-    image: '/brand/merch-cap.png',
-    description: 'Six-panel pink cap with embroidered heart detail on the side.',
-    options: 'One size · Strap back',
-  },
-  {
-    name: 'Tote & Box Bundle',
-    price: '£16',
-    image: '/brand/takeaway-bag.png',
-    description: 'Branded tote plus a pack of two collector pizza boxes for your next night in.',
-    options: 'Limited run',
   },
 ]
 

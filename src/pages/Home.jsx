@@ -6,7 +6,6 @@ import {
   eventTypes,
   menu,
   testimonials,
-  upcomingEvents,
 } from '../data/site'
 import { Icon, ArrowIcon, InstagramIcon } from '../components/Icons'
 import Reveal from '../components/Reveal'
@@ -16,10 +15,10 @@ import usePageMeta from '../hooks/usePageMeta'
 import './Home.css'
 
 const socialTiles = [
-  { src: '/brand/pizza-pink.png', alt: 'Margherita pizza fresh from the oven' },
-  { src: '/brand/neon-sign.png', alt: 'Neon sign reading good pizza, good vibes, happy wives' },
+  { src: '/brand/book-pizza.jpg', alt: 'Margherita pizza fresh from the oven' },
+  { src: '/brand/neon-sign.jpg', alt: 'Neon sign reading good pizza, good vibes, happy wives' },
   { src: '/brand/gazebo.png', alt: 'The pink gazebo and woodfired oven at an event' },
-  { src: '/brand/wives-back.png', alt: 'The Dough Wives in branded tees and aprons' },
+  { src: '/brand/wives-back.jpg', alt: 'The Dough Wives in branded tees and aprons' },
 ]
 
 export default function Home() {
@@ -128,17 +127,17 @@ export default function Home() {
 
           <Reveal className="story__collage" delay={140}>
             <div className="photo-frame story__tile story__tile--main">
-              <img src="/brand/wives-portrait.png" alt="Illustrated portrait of the Dough Wives" />
+              <img src="/brand/wives-portrait.jpg" alt="Illustrated portrait of the Dough Wives" />
             </div>
             <div className="photo-frame story__tile story__tile--box">
-              <img src="/brand/pizza-box-open.png" alt="An open Dough Wives pizza box" />
+              <img src="/brand/book-pizza.jpg" alt="An open Dough Wives pizza box" />
             </div>
             <div className="photo-frame story__tile story__tile--cups">
-              <img src="/brand/pink-cups.png" alt="Branded pink drinks cups" />
+              <img src="/brand/pink-cups.jpg" alt="Branded pink drinks cups" />
             </div>
             <div className="photo-frame story__tile story__tile--neon">
               <img
-                src="/brand/neon-sign.png"
+                src="/brand/neon-sign.jpg"
                 alt="Neon sign reading good pizza, good vibes, happy wives"
               />
             </div>
@@ -239,40 +238,6 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Upcoming events */}
-      <section className="section section--tint next-up">
-        <div className="container">
-          <div className="next-up__head">
-            <div>
-              <p className="eyebrow">Find us next</p>
-              <h2 className="section-title">
-                Markets & <span className="accent">festivals</span>
-              </h2>
-            </div>
-            <Link to="/events" className="link-underline">
-              All dates
-              <ArrowIcon width="16" height="16" />
-            </Link>
-          </div>
-
-          <ul className="next-up__list">
-            {upcomingEvents.slice(0, 3).map((event, index) => (
-              <Reveal as="li" className="next-up__item" key={event.date} delay={index * 80}>
-                <span className="next-up__date">
-                  <strong>{event.day}</strong>
-                  {event.month}
-                </span>
-                <span className="next-up__info">
-                  <strong>{event.name}</strong>
-                  {event.location}
-                </span>
-                <span className="next-up__time">{event.time}</span>
-              </Reveal>
-            ))}
-          </ul>
         </div>
       </section>
 

@@ -17,7 +17,7 @@ export default function Footer() {
           <div>
             <h3>Explore</h3>
             <ul>
-              {nav.slice(0, 5).map((item) => (
+              {nav.slice(0, 3).map((item) => (
                 <li key={item.to}>
                   <Link to={item.to}>{item.label}</Link>
                 </li>
@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <h3>More</h3>
             <ul>
-              {nav.slice(5).map((item) => (
+              {nav.slice(3).map((item) => (
                 <li key={item.to}>
                   <Link to={item.to}>{item.label}</Link>
                 </li>

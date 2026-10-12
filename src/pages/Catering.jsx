@@ -51,7 +51,7 @@ export default function Catering() {
         title="Pizza"
         accent="Catering"
         intro="Wood-fired pizza, made with love. Served with style. From intimate celebrations to full-on party vibes, we’ve got the perfect pizza package for your perfect day."
-        image="/brand/gazebo-sharp.png"
+        image="/brand/gazebo-sharp.jpg"
         imageAlt="The Dough Wives pink gazebo and Gozney woodfired oven"
       />
 
